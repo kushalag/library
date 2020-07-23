@@ -1,18 +1,17 @@
-// <script type="text/javascript">
-// import 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js';
-// import 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js';
-function details(email){
 
-    const URL = "https://notification.opdlift.com/api/wp-appointment";
+var dremail = "";
+
+function details1(email){
+  dremail = email;
+}
+
     var newmoment = moment();
+    const URL = "https://notification.opdlift.com/api/wp-appointment";
     var timeSlots = "";
     var selectedDate = "";
     var startTime = "";
     var endTime = "";
-    var dremail = email;
     var _opdId = "";
-
-}
 
   function setCustomDate(date) {
     let today = $.datepicker.formatDate("yy-mm-dd", new Date(date));
@@ -205,7 +204,7 @@ function details(email){
   }
 
   function getCalendarDates(fromDate, toDate) {
-    var settings = {
+    var settings = {  
       url: URL + "/calender",
       method: "POST",
       timeout: 0,
@@ -433,5 +432,3 @@ function details(email){
     }
     return result;
   }
-
-// </script>
